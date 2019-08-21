@@ -1,21 +1,55 @@
 import java.util.Scanner;
 
 public class Principal{
-  public static void main(String args[]){
-    Scanner sc = new Scanner(System.in);
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
 
-    PilhaArray<String> pilha = new PilhaArray<String>();
+		PilhaRubroNegra<String> prb = new PilhaRubroNegra<String>(5);
 
-    String nome[] = {"Pedro", "Paulo", "Pablo", "Afonso", "João", "Carlos", "Pietro", "Melquíades"};
+		prb.pushPreta("JP");
+		prb.pushPreta("Pablo");
+		prb.pushPreta("Rodrigo");
 
-    for(int i = 0; i < nome.length; i++){
-      pilha.push(nome[i]);
-      System.out.println("Carga: "+pilha.carga());
-    }
+		prb.mostrarTudo();
+		System.out.println("");
 
-    System.out.println("Tamanho: "+pilha.size());
+		prb.pushVermelha("Jesus");
+		System.out.println("");
+		prb.mostrarTudo();
+		prb.pushVermelha("Pedro");
+		System.out.println("");
+		prb.mostrarTudo();
+		prb.pushVermelha("Carlos");
+		System.out.println("");
+		prb.mostrarTudo();
+		prb.pushVermelha("Plácido");
+		System.out.println("");
+		prb.mostrarTudo();
 
-    pilha.mostrarTudo();
+		System.out.println("");
+		prb.pushPreta("Daniel");
 
-  }
+		prb.mostrarTudo();
+		//prb.mostrarVermelha();
+		//prb.mostrarPreta();
+		//System.out.println("Size Vermelha: "+prb.sizeVermelha());
+		//System.out.println("Size Preta: "+prb.sizePreta());
+		//System.out.println("Tamanho total: "+prb.capacidade);
+
+		/*System.out.println("Tamanho Vermelha: "+prb.sizeVermelha());
+		System.out.println("Tamanho Preta: "+prb.sizePreta());
+
+		System.out.println("TOP Vermelha");
+		System.out.println(prb.topVermelha());
+		System.out.println("TOP Preta");
+		System.out.println(prb.topPreta());
+
+		System.out.println("POP Vermelha");
+		System.out.println(" "+prb.popVermelha());
+		System.out.println("POP Preta");
+		System.out.println(" "+prb.popPreta());
+		prb.mostrarVermelha();
+		System.out.println("");
+		prb.mostrarPreta();*/
+	}
 }
